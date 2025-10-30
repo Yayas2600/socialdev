@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-familias {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px #aaa4a4;
+    width: 300px;
+}
+
+.card p{
+    margin: 8px 0;
+}
+
+.card{
+    background-color: #663399;
+    color: #fff;
+    padding: 20px;
+    border-radius:8px;
+}
+
+/*nomes dentro do sidebar*/
+.vcard-names>.nomeCompleto {
+    font-size: 24px;
+}
+
+.vcard-names>.nomeUsuario {
+    font-size: 20px;
+}

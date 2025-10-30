@@ -1,0 +1,19 @@
+
+h1{
+    text-align: center;
+    margin: 1%;
+}
+button {
+    margin:1%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #08030b;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+body{
+    padding: 1rem;
+    background-color: #333;
+}

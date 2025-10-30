@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  background: #201b2c;
+}
+
+label {
+  font-weight: 200;
+  font-size: 16px;
+  color: #f0ffffde;
+}
+
+/*Estilizando o select*/
+.option {
+  color: #f0ffffde;
+}
+
+input,
+select {
+  color: #8d9292de;
+  background: #514869;
+  padding: 8px;
+  border: 3px solid #514869;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/*Remover a setinha do input*/
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+/*Mensagem de erro email e cpf*/
+.error-msg {
+  color: red;
+  font-size: 0.9em;
+  display: none;
+  margin-top: 4px;
+}
+
+
+/*Altera a cor do preenchimento automático*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #514869 inset !important;
+  -webkit-text-fill-color: #8d9292de !important;
+  caret-color: #8d9292de;
+  border: 1px solid #514869;
+  /* opcional, se quiser forçar borda igual */
+  transition: background-color 5000s ease-in-out 0s;
+}
