@@ -63,6 +63,5 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #8d9292de !important;
   caret-color: #8d9292de;
   border: 1px solid #514869;
-  /* opcional, se quiser forçar borda igual */
   transition: background-color 5000s ease-in-out 0s;
 }

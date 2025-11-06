@@ -6,16 +6,8 @@
 // INSPIRAÇÃO:https://www.ideo.com/
 
 
-
-// Verifica se há um usuário logado
-const usuarioAtual = JSON.parse(localStorage.getItem("usuarioAtual"));
-
-if (!usuarioAtual) {
-    alert("⚠️ Você precisa fazer login para acessar o Portal.");
-    window.location.href = "login.html"; // Redireciona se não estiver logado
-}
-
 const btnCadastrarFamilia = document.querySelector("#btnCadastrarFamilia");
+const btninfoFamilias= document.querySelector("#btninfoFamilias");
 
 // Ao clicar no botão
 btnCadastrarFamilia.addEventListener("click", () => {
@@ -28,5 +20,19 @@ btnCadastrarFamilia.addEventListener("click", () => {
     } else {
         // Redireciona para a página de cadastro de família
         window.location.href = "cadFamilias.html";
+    }
+});
+
+// Ao clicar no botão
+btninfoFamilias.addEventListener("click", () => {
+    // Verifica novamente (segurança extra)
+    const usuarioAtual = JSON.parse(localStorage.getItem("usuarioAtual"));
+
+    if (!usuarioAtual) {
+        alert("⚠️ Faça login antes de acessar informações restritas!");
+        window.location.href = "login.html";
+    } else {
+        // Redireciona para a página de cadastro de família
+        window.location.href = "usuarioLogado.html";
     }
 });

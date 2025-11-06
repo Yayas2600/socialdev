@@ -7,16 +7,18 @@
 }
 
 body {
+  margin: 0;
   background: #201b2c;
   color: #f0f6fc;
 }
 
-.header{
+.header {
   color: #201b2c;
 }
 
 .estatic {
-  background-color: rgba(241, 234, 164, 0.95);
+  background-color: rgba(52, 197, 117, 0.993);
+  box-shadow: 0px -30px 70px rgba(52, 197, 117, 0.95);
   position: fixed;
   top: 0;
   left: 0;

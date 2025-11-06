@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/usuarioLogado.css">
     <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
 </head>
+
 <body>
     <header class="relative">
         <div class="estatic">
-            <h1 class="header">WELCOME to SOCIALDEV</h1>
+            <h1 class="header" id="headerH1">WELCOME to SOCIALDEV</h1>
+        </div>
+        <div class="logout">
+            <button id="logoutBtn" class="logout-btn">
+                <i class="bi bi-box-arrow-right"></i> Sair
+            </button>
         </div>
     </header>
     <div class="content">
 
-        <nav class="sidebar">
+        <section class="avatar">
             <div class="card-side" id="card-side">
+
                 <div class="avatar-user" id="avatar-user">
-                    <img>
+                    <i class="bi bi-person-circle" id="iconePerfil"></i>
+                    <button id="upload-btn" class="upload-btn" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="uploadMenu">
+                        <i class="bi bi-pen">Edit</i>
+                    </button>
+                    <input type="file" id="fotoUsuario" accept="image/*" style="display: none;">
+                    <img id="preview" alt="Prévia da imagem">
+
+                    <!-- menu com as opções -->
+                    <div id="uploadMenu" class="upload-menu" role="menu" aria-hidden="true">
+                        <button type="button" id="mudarFoto" class="menu-item" role="menuitem">Upload foto</button>
+                        <button type="button" id="removerFoto" class="menu-item" role="menuitem">Remover foto</button>
+                    </div>
                 </div>
+
                 <div class="vcard-names-container" id="vcard-names-container">
                     <h1 class="vcard-names" id="vcard-names">
                         <span class="nomeCompleto" id="nomeCompleto">Nome Completo</span><br>
@@ -28,18 +51,57 @@
                     <div class="infoUsuario" id="infoUsuario">
                         <p>Informações do usuário</p>
                     </div>
-                    <button>Editar informações</button>
+                    <button id="editarInfo">Editar informações</button>
                 </div>
             </div>
-        </nav>
+        </section>
 
         <main>
-            <section class="card-familias" id="listaFamilias">
+            <h2>Famílias Cadastradas</h2>
+            <div class="filtros">
+                <select id="filtro">
+                    <option style="border-bottom: 1px solid #d6d2d2;" value="todas">Todas as Famílias</option>
+                    <option value="minhas">Minhas Famílias</option>
+                </select>
+
+                <div class="campo-busca">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="busca" placeholder="Buscar Família pelo nome..." />
+                </div>
+            </div>
+            <section id="listaFamilias">
             </section>
         </main>
+    </div>
 
+    <!-- Modal Edição -->
+    <div id="modalEdicao" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Editar Família
+                <hr>
+            </h3>
+            <form id="formEdicaoModal">
+                <label>Nome:</label>
+                <input type="text" name="nome" required>
 
+                <label>Email:</label>
+                <input type="text" name="email" required>
+
+                <label>Celular:</label>
+                <input type="text" name="celular" required>
+
+                <label>Situação de Moradia:</label>
+                <input type="text" name="SituaçãoMoradia" required />
+
+                <label>Observações:</label>
+                <textarea id="mensagem" rows="4"></textarea>
+
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
     </div>
     <script src="/js/usuLogado.js"></script>
 </body>
+
 </html>

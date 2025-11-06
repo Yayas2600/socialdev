@@ -70,6 +70,12 @@ form.addEventListener("submit", (event) => {
         cpfInput.style.borderColor = "";
     }
 
+    //campo mensagem
+    let mensagem = imsgInput.value.trim();
+    if (mensagem === ""){
+        mensagem = "nenhuma informação";
+    }
+
     // Valida cadastro da família
     const cpf = cpfInput.value.trim();
 
@@ -123,7 +129,7 @@ form.addEventListener("submit", (event) => {
         QuantosTrabalham: trabInput.value.trim(),
         salarios: totalSalarios,
         SituaçãoMoradia: moradiaInput.value.trim(),
-        mensagem: imsgInput.value.trim(),
+        mensagem: mensagem,
         classe: classificacao,
         cadastradoPor: usuarioAtual.usuario // adiciona o nome do usuário logado
     };
