@@ -79,7 +79,7 @@ form.addEventListener("submit", (event) => {
         senhaInput.style.borderColor = "";
     }
 
-    // Pega lista existente ou cria uma nova
+    // Pega lista existente
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     // Verifica se já existe alguém com esse nome

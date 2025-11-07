@@ -1,12 +1,29 @@
 window.addEventListener("DOMContentLoaded", () => {
-  // 🔒 Verificação de login logo no início
+  //Verificação de login logo no início
   const usuarioAtual = JSON.parse(localStorage.getItem("usuarioAtual"));
   if (!usuarioAtual) {
     alert("Acesso negado! Faça login para continuar.");
     window.location.href = "login.html";
-    return; // interrompe o resto do código
+    return;
   }
+
+  //informações do usuário
+  const nomeCompleto = document.getElementById('nomeCompleto');
+  const nomeUsuario = document.getElementById('nomeUsuario');
+
   
+
+  if (usuarioAtual) {
+    nomeCompleto.textContent = usuarioAtual.nomeCompleto || "nome";
+    nomeUsuario.textContent = usuarioAtual.nomeUsuario || "Usuário";
+  } else {
+    // se não tiver usuário logado, redireciona ou mostra aviso
+    nomeCompleto.textContent = "Visitante";
+    nomeUsuario.textContent = "Não logado";
+    // window.location.href = "login.html";
+  }
+
+
   const lista = document.getElementById("listaFamilias");
   const filtro = document.getElementById("filtro");
   const busca = document.getElementById("busca");
@@ -280,10 +297,5 @@ window.addEventListener("DOMContentLoaded", () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') toggleMenu(false);
   });
-
-  //informações do usuário
-  const nomeCompleto = document.getElementById('nomeCompleto');
-  nomeCompleto = 'usuarioAtual'.nome.value.trim();
-  console.log
 
 });
