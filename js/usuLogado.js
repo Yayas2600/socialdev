@@ -14,15 +14,41 @@ window.addEventListener("DOMContentLoaded", () => {
   
 
   if (usuarioAtual) {
-    nomeCompleto.textContent = usuarioAtual.nomeCompleto || "nome";
-    nomeUsuario.textContent = usuarioAtual.nomeUsuario || "Usuário";
+    nomeCompleto.textContent = usuarioAtual.nome || "Nome completo";
+    nomeUsuario.textContent = usuarioAtual.usuario || "Usuário";
   } else {
-    // se não tiver usuário logado, redireciona ou mostra aviso
-    nomeCompleto.textContent = "Visitante";
-    nomeUsuario.textContent = "Não logado";
-    // window.location.href = "login.html";
+    // se não tiver usuário logado, redireciona e mostra alert
+    alert("Você precisa estar logado para acessar esta página!");
+    window.location.href = "login.html";
   }
 
+   // Exibe as info usuário
+  const infoUsuario = document.getElementById("infoUsuario");
+
+  if (!usuarioAtual) {
+    // Se não houver usuário logado, redireciona para login
+    window.location.href = "login.html";
+    return;
+  }
+
+  // Mostra o nome e nome de usuário
+  nomeCompleto.textContent = usuario.nome || "Nome Completo";
+  nomeUsuario.textContent = usuario.usuario || "Usuário";
+
+  // Cria o card com as informações
+  infoUsuario.innerHTML = `
+    <div class="card-info-usuario">
+      <p><strong>E-mail:</strong> ${usuario.email || "-"}</p>
+      <p><strong>CPF:</strong> ${usuario.cpf || "-"}</p>
+      <p><strong>Idade:</strong> ${usuario.idade || "-"}</p>
+      <p><strong>Celular:</strong> ${usuario.celular || "-"}</p>
+      <p><strong>Endereço:</strong> ${usuario.endereço || "-"}</p>
+      <p><strong>Gênero:</strong> ${usuario.genero || "-"}</p>
+      <p><strong>Disponibilidade:</strong> 0${usuario.disponibilidadeHorário || "-"}</p>
+      <p><strong>Data de Cadastro:</strong> ${usuario.dataCadastro || "-"}</p>
+    </div>
+  `;
+});
 
   const lista = document.getElementById("listaFamilias");
   const filtro = document.getElementById("filtro");

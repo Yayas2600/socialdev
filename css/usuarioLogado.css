@@ -42,16 +42,18 @@ header {
 
 
 /*Estilizando corpo da página*/
+.content{
+    margin-left: 3%;
+}
+
 main {
     display: flex;
     padding: 2px;
     flex-wrap: wrap;
     flex-direction: column;
     position: relative;
-    left: 10%;
+    left: 8%;
 }
-
-
 
 /*Informações do usuário*/
 .avatar {
@@ -76,8 +78,7 @@ main {
 }
 
 .avatar-user img {
-    clip-path: circle(50%);
-    /*imagem se estende apenas nessa proporção, sem bloquear elementos externos*/
+    clip-path: circle(50%);/*imagem se estende apenas nessa proporção, sem bloquear elementos externos*/
 }
 
 #upload-btn {
@@ -123,7 +124,18 @@ main {
     object-fit: cover;
 }
 
+/*informações pessoais do Usuário*/
+/*nomes dentro do sidebar*/
+.vcard-names>.nomeCompleto {
+    font-size: 24px;
+}
 
+.vcard-names>.nomeUsuario {
+    color: #9198a1;
+    position: relative;
+    bottom: 25px;
+    font-size: 20px;
+}
 
 /*opções menu do button edit*/
 .upload-menu {
@@ -211,16 +223,8 @@ main {
 }
 
 .card-familia .info p {
+    font-weight: 400;
     margin: 8px 0;
-}
-
-/*nomes dentro do sidebar*/
-.vcard-names>.nomeCompleto {
-    font-size: 24px;
-}
-
-.vcard-names>.nomeUsuario {
-    font-size: 20px;
 }
 
 .card-familia:hover {
