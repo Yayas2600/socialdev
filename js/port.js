@@ -15,8 +15,7 @@ btnCadastrarFamilia.addEventListener("click", () => {
     const usuarioAtual = JSON.parse(localStorage.getItem("usuarioAtual"));
 
     if (!usuarioAtual) {
-        alert("⚠️ Faça login antes de cadastrar uma família!");
-        window.location.href = "login.html";
+        alert("⚠️ Faça login antes de cadastrar uma família!"); 
     } else {
         // Redireciona para a página de cadastro de família
         window.location.href = "cadFamilias.html";
@@ -30,9 +29,46 @@ btninfoFamilias.addEventListener("click", () => {
 
     if (!usuarioAtual) {
         alert("⚠️ Faça login antes de acessar informações restritas!");
-        window.location.href = "login.html";
     } else {
         // Redireciona para a página de cadastro de família
         window.location.href = "usuarioLogado.html";
     }
 });
+
+//menu header
+  const menuHamburguer = document.getElementById('menu-hamburguer');
+  const menuOpcoes = document.getElementById('menu-opcoes');
+
+  function toggleMenu(show) {
+  if (show) {
+    menuOpcoes.classList.add('show');
+    menuOpcoes.setAttribute('aria-hidden', 'false');
+    menuHamburguer.setAttribute('aria-expanded', 'true');
+  } else {
+    menuOpcoes.classList.remove('show');
+    menuOpcoes.setAttribute('aria-hidden', 'true');
+    menuHamburguer.setAttribute('aria-expanded', 'false');
+  }
+}
+
+// fechar menu ao clicar fora
+document.addEventListener('click', (e) => {
+  if (!menuHamburguer.contains(e.target) && ! menuOpcoes.contains(e.target)) {
+    toggleMenu(false);
+  }
+});
+
+// abrir menu ao clicar no botão
+menuHamburguer.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleMenu( menuOpcoes.classList.contains('show') ? false : true);
+});
+
+// teclado: ESC fecha menu
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') toggleMenu(false);
+});
+
+function login() {
+    location.href = "login.html";
+}

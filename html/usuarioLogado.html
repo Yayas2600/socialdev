@@ -14,12 +14,18 @@
 <body>
     <header class="relative">
         <div class="estatic">
-            <h1 class="header" id="headerH1">WELCOME to SOCIALDEV</h1>
-        </div>
-        <div class="logout">
-            <button id="logoutBtn" class="logout-btn">
-                <i class="bi bi-box-arrow-right"></i> Sair
-            </button>
+            <img src="/imagens/LOGO OFICIAL.png">
+            <!-- botão menu com as opções -->
+            <div class="menu">
+                <button id="menu-hamburguer" class="menu-hamburguer" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="menu-hamburguer">
+                        <i class="bi bi-list"></i>
+                </button>
+                <div id="menu-opcoes" class="menu-opcoes" role="menu" aria-hidden="true">
+                    <button type="button" id="Portal" class="hamburguer-item" role="menuitem" onclick="Portal(); return false"><i class="bi bi-house-heart-fill"></i>Portal</button>
+                    <button id="logoutBtn" class="hamburguer-item" role="menuitem"><i class="bi bi-power"></i>Sair</button>
+                </div>
+            </div>
         </div>
     </header>
     <div class="content">
@@ -36,7 +42,7 @@
                     <input type="file" id="fotoUsuario" accept="image/*" style="display: none;">
                     <img id="preview" alt="Prévia da imagem">
 
-                    <!-- menu com as opções -->
+                    <!-- botão edit com as opções -->
                     <div id="uploadMenu" class="upload-menu" role="menu" aria-hidden="true">
                         <button type="button" id="mudarFoto" class="menu-item" role="menuitem">Upload foto</button>
                         <button type="button" id="removerFoto" class="menu-item" role="menuitem">Remover foto</button>
@@ -48,9 +54,10 @@
                         <span class="nomeCompleto" id="nomeCompleto">Nome Completo</span><br>
                         <span class="nomeUsuario" id="nomeUsuario">Nome de usuário</span>
                     </h1>
-                    <div class="infoUsuario" id="infoUsuario">
+                    <div class="infoUsuario" id="infoUsuario"></div>
+                    <div class="botoes-edicao">
+                        <button id="editarInfo">Editar informações</button>
                     </div>
-                    <button id="editarInfo">Editar informações</button>
                 </div>
             </div>
         </section>

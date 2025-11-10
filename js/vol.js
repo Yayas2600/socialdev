@@ -12,7 +12,6 @@
 //                  junto também os cards das familias cadastradas pelo usuário(estilo gitHub e Cartão de todos)
 
 
-
 const form = document.querySelector("#form");
 const nomeInput = document.querySelector("#name");
 const idadeInput = document.querySelector("#idade");
@@ -23,7 +22,7 @@ const emailMsg = document.getElementById('email-msg');
 const celularInput = document.querySelector("#celular");
 const enderecoInput = document.querySelector("#endereco");
 const generoInput = document.querySelector("#genero");
-const diaInput = document.querySelector("#dia");
+const dia = document.getElementById("dia");
 const senhaInput = document.querySelector("#senha");
 const senhaMsg = document.getElementById("senha-msg");
 
@@ -100,7 +99,7 @@ form.addEventListener("submit", (event) => {
         endereço: enderecoInput.value.trim(),
         celular: celularInput.value.trim(),
         genero: generoInput.value.trim(),
-        disponibilidadeHorário: dia.value.trim(),
+        disponibilidadeHorário:dia.value.trim(),
         dataCadastro: new Date().toLocaleDateString("pt-BR")
     };
 
