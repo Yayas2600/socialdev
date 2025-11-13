@@ -9,6 +9,8 @@ body {
 }
 
 h1 {
+    color: #e6b71d;
+    font-weight: 200;
     text-align: center;
 }
 
@@ -41,7 +43,7 @@ button {
 
 /*Estilizando campo senha*/
 .senhaInput {
-    
+
     margin-bottom: 40px;
     position: relative;
     padding: 0;
@@ -64,8 +66,8 @@ div i {
 }
 
 .estatic {
-    background-color: rgba(52, 197, 117, 0.970);
-    box-shadow: 0px -30px 70px rgba(52, 197, 117, 0.95);
+    background: linear-gradient(to left, rgb(100, 48, 241)1%, rgb(96, 55, 211));
+    box-shadow: 0px -30px 70px rgba(96, 52, 197, 0.95);
     position: fixed;
     top: 0;
     left: 0;

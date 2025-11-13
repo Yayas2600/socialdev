@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -8,13 +8,26 @@
     <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="/css/port.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
 </head>
 
 <body>
-    <header class="relative">
-        <div class="estatic">
+    <!-- transição do início -->
+    <div id="preloader">
+        <div class="logo">
             <img src="/imagens/LOGO OFICIAL.png">
+        </div>
+    </div>
+
+    <header id="header" class="relative">
+        <nav>
+            <div class="menu-left">
+                <img src="/imagens/LOGO OFICIAL.png">
+                <a href="#home">HOME</a>
+                <a href="#">SEÇÃO 2</a>
+                <a href="#">SEÇÃO 3</a>
+                <a href="#">SEÇÃO 4</a>
+            </div>
+
             <!-- botão menu com as opções -->
             <div class="menu">
                 <button id="menu-hamburguer" class="menu-hamburguer" aria-haspopup="true" aria-expanded="false"
@@ -22,13 +35,34 @@
                     <i class="bi bi-list"></i>
                 </button>
                 <div id="menu-opcoes" class="menu-opcoes" role="menu" aria-hidden="true">
-                    <button id="logoutBtn" style="border-bottom: 1px solid #9198a149;" class="hamburguer-item" role="menuitem" onclick="login(); return false"><i style="font-size: 18px;" class="bi bi-power"></i>Login</button>
-                    <button id="btnCadastrarFamilia" class="hamburguer-item"><i style="font-size: 18px;" class="bi bi-clipboard2-heart"></i>Cadastrar Família</button>
-                    <button id="btninfoFamilias" style="border-top: 1px solid #9198a149;" class="hamburguer-item"><i style="font-size: 18px;" class="bi bi-info-circle"></i>Informações Família</button>
+                    <button id="logoutBtn" style="border-bottom: 1px solid #9198a149;" class="hamburguer-item"
+                        role="menuitem" onclick="login(); return false"><i style="font-size: 18px;"
+                            class="bi bi-power"></i>Login</button>
+                    <button id="btnCadastrarFamilia" class="hamburguer-item"><i style="font-size: 18px;"
+                            class="bi bi-clipboard2-heart"></i>Cadastrar Família</button>
+                    <button id="btninfoFamilias" style="border-top: 1px solid #9198a149;" class="hamburguer-item"><i
+                            style="font-size: 18px;" class="bi bi-info-circle"></i>Informações Família</button>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
+    <div class="main">
+        <section id="home" class="home">
+            <div class="kids">
+                <img src="/imagens/pexels-kadume-4285736.jpg">
+            </div>
+            <h1>
+                <i>
+                    Ser SocialDEV é acreditar que juntos
+                    <span class="sub1">podemos reescrever histórias com</span>
+                    <span class="sub2">empatia e ação.</span>
+                </i>
+            </h1>
+        </section>
+        <section id="#" class="sec2" style="height: 2000px">
+            <p>oi</p>
+        </section>
+    </div>
     <script src="/js/port.js"></script>
 </body>
 

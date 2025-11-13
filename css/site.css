@@ -6,48 +6,13 @@
   font-style: normal;
 }
 
-body {
-  margin: 0 0 10px 0;
-  background: linear-gradient(-20deg, rgb(7, 2, 53) 50%, rgb(83, 44, 189));
-  color: #f0f6fc;
-}
-
 /*Estilizando o header*/
 header {
   top: 0;
   position: relative;
   padding: 10px;
-  height: 70px;
-  z-index: 999;
-}
-
-.relative {
-  position: relative;
-  border-bottom: 1px solid #9198a149;
-}
-
-.estatic>img {
-  display: flex;
-  right: 5%;
-  width: 400px;
-  position: relative;
-  bottom: 45px;
-}
-
-.estatic {
-  background: transparent;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-/*botão menu-hamburguer*/
-.menu {
-  position: relative;
-  display: flex;
-  top: 10px;
-  right: 15px;
+  height: 50px;
+  z-index: 1000;
 }
 
 .menu-hamburguer {
@@ -77,8 +42,7 @@ header {
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   padding: 6px;
-  display: none;
-  /* hidden por padrão */
+  display: none;/* hidden por padrão */
   flex-direction: column;
   gap: 6px;
   z-index: 50;

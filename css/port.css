@@ -1,8 +1,198 @@
-.menu-opcoes{
-    min-width: 130px;
-    gap: 0;
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-.hamburguer-item{
-    border-radius: 0;
+body {
+  overflow-x: hidden;
+  margin: 0 0 10px 0;
+  color: #f0f6fc;
+  background: linear-gradient(300deg, rgb(54 22 143)2%, rgb(92, 51, 206));
+}
+
+/*--PRELOADER--*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  /* top, right, bottom, left = 0 */
+  background: radial-gradient(circle at center, #361391, #3818a3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease, visibility 2s ease;
+}
+
+/* logo dentro da tela */
+#preloader .logo {
+  font-size: 2.5rem;
+}
+
+/* animação de pulsar da logo */
+@keyframes fadeLogo {
+  from {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* quando começar a sumir */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* conteúdo principal (oculto até sumir o preloader) */
+#content {
+  opacity: 0;
+  animation: showContent 1s ease 1.2s forwards;
+}
+
+@keyframes showContent {
+  to {
+    opacity: 1;
+  }
+}
+
+
+/*header e menu*/
+.relative {
+  position: sticky;
+  border-bottom: 1px solid #9198a149;
+}
+
+.menu-opcoes {
+  margin-top: 30px;
+  margin-right: 80px;
+  width: 10%;
+  gap: 0;
+}
+
+.hamburguer-item {
+  border-radius: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to left, rgb(59, 28, 145)1%, rgb(83, 44, 189));
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+  /* transição suave */
+}
+
+header.shrink {
+  height: 30px;/* altura reduzida */
+  background: linear-gradient(to left, rgba(59, 28, 145, 0.692)1%, rgba(83, 44, 189, 0.692));
+  position: fixed;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 77.75rem;
+  height: 62px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*estilizando menu-left*/
+.menu-left {
+  display: flex;
+  gap: 50px;
+  height: 90px;
+}
+
+.menu-left>a {
+  color: #e0dbdb;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+}
+
+.menu-left>img {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100px;
+}
+
+/*pode usar em outras seções: background: linear-gradient(300deg, rgb(54 22 143)2%, rgb(92, 51, 206));*/
+/*Primeira seção*/
+.home {
+  background: rgb(12, 12, 12);
+}
+
+/*estilizando a frase seção 1*/
+section>h1 {
+  line-height: 35px;
+  display: flex;
+  white-space: pre-line;
+  justify-content: center;
+  position: relative;
+  bottom: 35px;
+}
+
+h1>i {
+  font-weight: 700;
+}
+
+i>span {
+  font-weight: 200;
+  font-size: 30px;
+}
+
+i .sub1 {
+  margin-left: 25px;
+}
+
+i .sub2 {
+  display: flex;
+  justify-content: center;
+}
+
+/*estilizando imagem seção 1*/
+.kids {
+  display: flex;
+  justify-content: center;
+}
+
+.kids>img {
+  border-radius: 75% 0 / 100% 0;/*estilizou em forma de "Olho"*/
+  padding: 30px 20px 20px 20px;
+  width: 500px;
+
+  -webkit-mask-image:
+
+    linear-gradient(to right, black 50%, transparent 100%),
+    linear-gradient(to left, black 50%, transparent 100%);
+  -webkit-mask-composite: intersect;
+
+  mask-image:
+
+    linear-gradient(to right, black 40%, transparent 100%),
+    linear-gradient(to left, black 50%, transparent 100%);
+
+  mask-composite: intersect;
+}
+
+/*segunda seção*/
+.sec2{
+  margin:0;
+  
 }
