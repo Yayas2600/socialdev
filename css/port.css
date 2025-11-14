@@ -192,7 +192,17 @@ i .sub2 {
 }
 
 /*segunda seção*/
-.sec2{
+.sobre{
   margin:0;
-  
+  display: flex;
+  justify-content: space-between;
+}
+
+.imagens img{
+  width: 100px;
+}
+
+.sobre p{
+  display: flex;
+  justify-content: right;
 }
