@@ -93,7 +93,8 @@ header {
 }
 
 header.shrink {
-  height: 30px;/* altura reduzida */
+  height: 30px;
+  /* altura reduzida */
   background: linear-gradient(to left, rgba(59, 28, 145, 0.692)1%, rgba(83, 44, 189, 0.692));
   position: fixed;
 }
@@ -173,13 +174,14 @@ i .sub2 {
 }
 
 .kids>img {
-  border-radius: 75% 0 / 100% 0;/*estilizou em forma de "Olho"*/
+  border-radius: 75% 0 / 100% 0;
+  /*estilizou em forma de "Olho"*/
   padding: 30px 20px 20px 20px;
   width: 500px;
 
   -webkit-mask-image:
 
-    linear-gradient(to right, black 50%, transparent 100%),
+    linear-gradient(to right, black 40%, transparent 100%),
     linear-gradient(to left, black 50%, transparent 100%);
   -webkit-mask-composite: intersect;
 
@@ -192,17 +194,97 @@ i .sub2 {
 }
 
 /*segunda seção*/
-.sobre{
-  margin:0;
+.sobre {
+  margin: 0;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 60px;
 }
 
-.imagens img{
+.imagens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+}
+
+.img-box {
+  position: relative;
   width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-.sobre p{
+.img-box img {
+  object-fit: cover;
+}
+
+#box1 {
+  width: 350px;
+  height: 250px;
+  border-top-left-radius: 37%;
+  box-shadow: -15px -15px 5px #F09F54;
+}
+
+#box2 {
+  width: 200px;
+  height: 250px;
+  border-top-right-radius: 45%;
+}
+
+#box3 {
+  width: 235px;
+  height: 200px;
+  border-bottom-left-radius: 55%;
+}
+
+#box4 {
+  width: 315px;
+  height: 200px;
+  right: 115px;
+  border-bottom-right-radius: 45%;
+  box-shadow: 15px 15px 5px #F09F54;
+}
+
+/*definindo a parte quem nós somos*/
+.content {
+  position: relative;
+  bottom: 50px;
+}
+
+.content h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.content span{
+  display: inline-block;
+  font-weight: 700;
+  background: linear-gradient( to right, #f0f6fc, #c444eb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content p {
+  text-align: justify;
+}
+
+.status {
+  margin-top: 20px;
   display: flex;
-  justify-content: right;
+  gap: 30px;
+}
+
+.status p{
+  margin:0;
+  font-size: 20px;
+}
+
+.status div strong {
+  display: block;
+  font-size: 35px;
+  color: #0066ff;
 }
