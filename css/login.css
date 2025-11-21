@@ -39,10 +39,10 @@ body {
 
 .left-login>h1 {
     font-size: 3vw;
-    color: #77ffc0
+    color: #8f70f9;
 }
 
-.left-login-img {
+.left-login-svg {
     width: 32vw;
 }
 
@@ -68,7 +68,7 @@ body {
 }
 
 .card-login>h1 {
-    color: #00ff88;
+    color:  #8f70f9;
     font-weight: 800;
     margin: 0;
 }
@@ -120,9 +120,9 @@ body {
     font-weight: 800;
     letter-spacing: 3px;
     color: #2b134b;
-    background: #00ff88;
+    background: #6b49df;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00ff8052;
+    box-shadow: 0px 10px 40px -12px #7000ff52;
 }
 
 .btn-cadastro {
@@ -134,9 +134,9 @@ body {
     font-weight: 800;
     letter-spacing: 3px;
     color: #2b134b;
-    background: #00ff88;
+    background: #6b49df;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00ff8052;
+    box-shadow: 0px 10px 40px -12px #7000ff52;
 }
 
 /*Estilizando campo senha*/

@@ -12,6 +12,15 @@ body {
   background: linear-gradient(300deg, rgb(54 22 143)2%, rgb(92, 51, 206));
 }
 
+/*estilizando tag link*/
+a{
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit; /* mantém a mesma cor do link normal */
+}
+
 /*--PRELOADER--*/
 #preloader {
   position: fixed;
@@ -90,6 +99,9 @@ header {
   backdrop-filter: blur(8px);
   transition: all 0.4s ease;
   /* transição suave */
+  transform: translateZ(0);
+  /* força compositor */
+  will-change: height;
 }
 
 header.shrink {
@@ -133,7 +145,27 @@ nav {
   height: 100px;
 }
 
-/*pode usar em outras seções: background: linear-gradient(300deg, rgb(54 22 143)2%, rgb(92, 51, 206));*/
+/*opçoes menu-hamburguer*/
+.menu-opcoes {
+  top: 30px;
+  position: absolute;
+  right: 8px;
+  min-width: 80px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 6px;
+  display: none;
+  /* hidden por padrão */
+  flex-direction: column;
+  gap: 6px;
+  z-index: 50;
+}
+
+.menu-opcoes.show {
+  display: flex;
+}
+
 /*Primeira seção*/
 .home {
   background: rgb(12, 12, 12);
@@ -200,6 +232,20 @@ i .sub2 {
   align-items: center;
   gap: 30px;
   padding: 60px;
+  opacity: 0;
+  transform: translateY(60px);
+  filter: blur(5px);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s cubic-bezier(0.17, 0.55, 0.55, 1),
+    filter 1.2s ease;
+}
+
+/* Quando aparecer */
+.sobre.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
 
 .imagens {
@@ -259,10 +305,10 @@ i .sub2 {
   font-weight: 700;
 }
 
-.content span{
+.content span {
   display: inline-block;
   font-weight: 700;
-  background: linear-gradient( to right, #f0f6fc, #c444eb);
+  background: linear-gradient(to right, #f0f6fc, #c444eb);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -278,8 +324,8 @@ i .sub2 {
   gap: 30px;
 }
 
-.status p{
-  margin:0;
+.status p {
+  margin: 0;
   font-size: 20px;
 }
 
@@ -287,4 +333,254 @@ i .sub2 {
   display: block;
   font-size: 35px;
   color: #0066ff;
+}
+
+/*Estilizando o Scroll*/
+.scroll {
+  margin-top: 10px;
+  max-width: 100%;
+
+  mask: linear-gradient(to right, transparent, black 10%, black 85%, transparent);
+}
+
+.scroll-container {
+  width: max-content;
+  translate: -5%;
+}
+
+.scroll-container img {
+  width: 150px;
+}
+
+/*estilizando primeira scroll*/
+.scroll-one {
+  display: flex;
+  animation: scrollInfinito 15s linear infinite;
+}
+
+/*estilizando segundo scroll*/
+.scroll-two {
+  display: flex;
+  animation: scrollInfinito 25s linear infinite;
+}
+
+/*animando scroll*/
+@keyframes scrollInfinito {
+  to {
+    translate: calc(-50%);
+  }
+}
+
+/*scrolly projetos*/
+.projetos {
+  user-select: none;
+  margin-top: 40px;
+  margin-bottom:40px;
+  position: relative;
+  height: 400vh; /* 4 slides = 400vh */
+  background: #0c0c0c;
+  overflow: visible;
+  z-index: 0; /* manter base */
+  mask: linear-gradient(to top, transparent, black 1%, black 98%, transparent);
+}
+
+.scroll-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.85);
+  pointer-events: none; /* não bloqueia cliques */
+  transition: opacity 0.18s ease;
+  opacity: 1;
+  z-index: 99999; /* ficar acima de todo o conteúdo */
+}
+
+
+.slides-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  contain: strict;
+  transform: translateZ(0);/*força GPU*/
+}
+
+.slides {
+  margin-top: 20px;
+  display: flex;
+  height: 100%;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s ease;
+  flex-wrap: nowrap; /* impede quebra de linha */
+  gap: 15px;
+  overflow-x: scroll; /* permite scroll horizontal */
+  scroll-behavior: smooth; /* animação suave */
+  scroll-snap-type: x mandatory; /* trava automática */
+  cursor: grab;
+  -webkit-overflow-scrolling: touch; /* para iOS smooth */
+}
+
+.slides.dragging {
+  cursor: grabbing;/* mão fechada enquanto arrasta */
+}
+
+/*remove barra de scroll visível */
+.slides::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  height: 100vh;
+  display: flex;
+  flex: 0 0 100vw;
+  scroll-snap-align: center;
+  /* slide centralizado na travinha */
+  align-items: center;
+  justify-content: center;
+  transform: translate3d(0, 0, 0);
+}
+
+/* conteúdo interno*/
+.slide .img {
+  width: 38vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  backface-visibility: hidden;
+}
+
+.slide .proContent {
+  margin: 0;
+  width: 41vw;
+  height: 80vh;
+  padding: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  background: #4029b9;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.proContent h2 {
+  color: white;
+  padding: 3px;
+  border-radius: 20px;
+  position: relative;
+  top: 25px;
+  left: 130px;
+  background-color: #c444eb;
+  width: 300px;
+  text-align: center;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 0px 40px -8px #c444eb;
+}
+
+.span-slides{
+  font-weight:bold;
+}
+
+.proContent p{
+  color: rgb(240, 237, 237);
+  padding: 20px 10px 0 10px;
+}
+
+.proContent .outro-paragrafo{
+  margin-top: -15px;
+}
+
+.slide:last-child {
+  position: relative;
+  right: 100px;
+}
+
+/*section chamada*/
+.chamada-container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 20px;
+}
+
+.chamada{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 1px solid #635c5c;
+  border-radius: 20px;
+  padding: 50px 0 20px 20px;
+  width: 400px;
+  height: 200px;
+}
+
+.chamada>h3{
+  font-weight: 500;
+}
+
+.chamada>.contatos-button>i, .redes-sociais>p>i{
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.contatos-button{
+  width: 130px;
+  box-shadow: 0px 0px 40px -15px rgb(233 208 96);
+  background-color: rgb(233 208 96);
+  display: flex;
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 80px;
+}
+
+
+/*footer contatos*/
+footer{
+  background: #0c0c0c;
+  position: relative;
+  top: 80px;
+}
+
+.container-contatos{
+  display: flex;
+  gap: 250px;
+  align-items: center;
+}
+
+.redes-sociais{
+  padding-left: 10px;
+}
+
+.redes-sociais>h3{
+  margin-top: 17px;
+  width: 400px;
+}
+
+.redes-sociais>p{
+  font-size:12px;
+}
+
+.redes{
+  display: flex;
+  gap: 40px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.redes-sociais>.redes>.facebook>a>i{
+  color: white;
 }

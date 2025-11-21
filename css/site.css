@@ -32,26 +32,6 @@ header {
   background-color: #292828;
 }
 
-/*opçoes menu-hamburguer*/
-.menu-opcoes {
-  top: 30px;
-  position: absolute;
-  right: 8px;
-  min-width: 80px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  padding: 6px;
-  display: none;/* hidden por padrão */
-  flex-direction: column;
-  gap: 6px;
-  z-index: 50;
-}
-
-.menu-opcoes.show {
-  display: flex;
-}
-
 .hamburguer-item {
   background: transparent;
   border: none;

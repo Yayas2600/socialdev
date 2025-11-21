@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 0 10px 0;
-    background: linear-gradient(-20deg, rgb(27, 18, 107) 50%, rgb(83, 44, 189));
+    background: #201b2c;
     color: #f0f6fc;
 }
 
@@ -26,18 +26,21 @@ main {
 /*Estilizando o header*/
 .relative {
     position: relative;
+    background: linear-gradient(to left, rgb(59, 28, 145)1%, rgb(83, 44, 189));
     border-bottom: 1px solid #9198a149;
 }
 
 .estatic>img {
-    display: flex;
-    right: 5%;
-    width: 400px;
-    position: relative;
-    bottom: 45px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100px;
 }
 
 .estatic {
+    bottom: 10px;
+    height: 71px;
+    align-items: center;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -45,10 +48,27 @@ main {
 
 /*botão menu-hamburguer*/
 .menu {
-    position: relative;
     display: flex;
-    top: 10px;
-    right: 15px;
+}
+
+/*opçoes menu-hamburguer*/
+.menu-opcoes {
+  top: 52px;
+  position: absolute;
+  right: 20px;
+  min-width: 80px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 6px;
+  display: none;/* hidden por padrão */
+  flex-direction: column;
+  gap: 6px;
+  z-index: 50;
+}
+
+.menu-opcoes.show {
+  display: flex;
 }
 
 /*Informações do usuário*/
