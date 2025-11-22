@@ -485,6 +485,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 function Portal() {
-    location.href = "Portal.html";
+    location.href = "index.html";
 }
 

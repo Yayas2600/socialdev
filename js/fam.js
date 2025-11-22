@@ -247,5 +247,5 @@ function isEmailValid(email) {
 }
 //função que volta no login
 function Portal() {
-    location.href = "Portal.html";
+    location.href = "index.html";
 }
